@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS unboxes(
    content blob not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
-);
+)engine = InnoDB default charset = utf8;
 
 
 /*//--- Profile Gift List*/
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS gift_list(
    content blob not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
-);
+)engine = InnoDB default charset = utf8;
 
 
 /*//--- Profile Posts*/
@@ -83,6 +83,6 @@ CREATE TABLE IF NOT EXISTS posts(
    caption varchar(256),
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
-);
+)engine = InnoDB default charset = utf8;
 
 
