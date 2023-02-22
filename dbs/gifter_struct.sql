@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS iProfile(
 	id int not null auto_increment,
 	profile_id varchar(30) not null,
    bio varchar(256),
+   datetime_creation datetime not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
 )engine = InnoDB default charset = utf8;
@@ -58,6 +59,7 @@ CREATE TABLE IF NOT EXISTS unboxes(
 	profile_id varchar(30) not null,
    title varchar(20),
    content blob not null,
+   datetime_posted datetime not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
 )engine = InnoDB default charset = utf8;
@@ -70,6 +72,7 @@ CREATE TABLE IF NOT EXISTS gift_list(
    title varchar(20) not null,
    description varchar(256),
    content blob not null,
+   datetime_posted datetime not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
 )engine = InnoDB default charset = utf8;
@@ -81,6 +84,7 @@ CREATE TABLE IF NOT EXISTS posts(
 	profile_id varchar(30) not null,
    content blob not null,
    caption varchar(256),
+   datetime_posted datetime not null,
    PRIMARY KEY (id),
    FOREIGN KEY (profile_id) REFERENCES iPersonal(username)
 )engine = InnoDB default charset = utf8;
